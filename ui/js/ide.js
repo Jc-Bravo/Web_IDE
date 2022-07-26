@@ -8,8 +8,10 @@ window.onload = function() {
 
 function changeLanguage() {
 
+    // $就是getElementById的简写 
     let language = $("#languages").val();
 
+    // 设置语法高亮
     if(language == 'c' || language == 'cpp')editor.session.setMode("ace/mode/c_cpp");
     else if(language == 'php')editor.session.setMode("ace/mode/php");
     else if(language == 'python')editor.session.setMode("ace/mode/python");
@@ -20,7 +22,7 @@ function executeCode() {
 
     $.ajax({
 
-        url: "/ide/app/compiler.php",
+        url: "/app/compiler.php",
 
         method: "POST",
 
